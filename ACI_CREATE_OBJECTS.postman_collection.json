@@ -1,0 +1,1008 @@
+{
+	"info": {
+		"_postman_id": "bd104c5c-567c-41ce-a4f1-c3982c2edd27",
+		"name": "ACI_CREATE_OBJECTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin-policies",
+			"description": "",
+			"item": [
+				{
+					"name": "local-user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<aaaUser accountStatus=\"active\" clearPwdHistory=\"no\" descr=\"\" dn=\"uni/userext/user-test\" email=\"\" expiration=\"never\" expires=\"no\" firstName=\"First Name\" lastName=\"Last Name\" name=\"test\" phone=\"\" pwdLifeTime=\"no-password-expire\">\n   <aaaUserDomain name=\"common\" rn=\"userdomain-common\">\n      <aaaUserRole name=\"read-all\" privType=\"readPriv\" rn=\"role-read-all\" />\n   </aaaUserDomain>\n   <aaaUserDomain name=\"all\" rn=\"userdomain-all\">\n      <aaaUserRole name=\"aaa\" privType=\"writePriv\" rn=\"role-aaa\" />\n      <aaaUserRole name=\"fabric-admin\" privType=\"writePriv\" rn=\"role-fabric-admin\" />\n      <aaaUserRole name=\"tenant-ext-admin\" privType=\"writePriv\" rn=\"role-tenant-ext-admin\" />\n      <aaaUserRole name=\"vmm-admin\" privType=\"writePriv\" rn=\"role-vmm-admin\" />\n      <aaaUserRole name=\"ops\" privType=\"writePriv\" rn=\"role-ops\" />\n      <aaaUserRole name=\"read-all\" privType=\"writePriv\" rn=\"role-read-all\" />\n      <aaaUserRole name=\"admin\" privType=\"writePriv\" rn=\"role-admin\" />\n      <aaaUserRole name=\"nw-svc-admin\" privType=\"writePriv\" rn=\"role-nw-svc-admin\" />\n      <aaaUserRole name=\"access-admin\" privType=\"writePriv\" rn=\"role-access-admin\" />\n      <aaaUserRole name=\"tenant-admin\" privType=\"writePriv\" rn=\"role-tenant-admin\" />\n   </aaaUserDomain>\n</aaaUser>"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.xml",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.xml"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fabric-access-policies",
+			"description": "",
+			"item": [
+				{
+					"name": "int-policy-10GE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fabricHIfPol\":{  \n      \"attributes\":{  \n         \"autoNeg\":\"on\",\n         \"linkDebounce\":\"100\",\n         \"name\":\"10GE\",\n         \"speed\":\"10G\",\n         \"status\":\"created,modified\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-policy-1GE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fabricHIfPol\":{  \n      \"attributes\":{  \n         \"autoNeg\":\"on\",\n         \"linkDebounce\":\"100\",\n         \"name\":\"1GE\",\n         \"speed\":\"1G\",\n         \"status\":\"created,modified\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-policy-40GE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fabricHIfPol\":{  \n      \"attributes\":{  \n         \"autoNeg\":\"on\",\n         \"linkDebounce\":\"100\",\n         \"name\":\"40GE\",\n         \"speed\":\"40G\",\n         \"status\":\"created,modified\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-policy-100M",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fabricHIfPol\":{  \n      \"attributes\":{  \n         \"autoNeg\":\"on\",\n         \"linkDebounce\":\"100\",\n         \"name\":\"100M\",\n         \"speed\":\"100M\",\n         \"status\":\"created,modified\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-policy-CDP-enabled",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"cdpIfPol\":{  \n      \"attributes\":{  \n         \"adminSt\":\"enabled\",\n         \"name\":\"cdp-enabled\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-policy-CDP-disabled",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"lldpIfPol\":{  \n      \"attributes\":{  \n         \"adminRxSt\":\"enabled\",\n         \"adminTxSt\":\"enabled\",\n         \"name\":\"lldp-enabled\",\n         \"status\":\"created,modified\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-policy-LLDP-disabled",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"lldpIfPol\":{  \n      \"attributes\":{  \n         \"adminRxSt\":\"disabled\",\n         \"adminTxSt\":\"disabled\",\n         \"name\":\"lldp-disabled\",\n         \"status\":\"created,modifed\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-policy-LLDP-enabled",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"lldpIfPol\":{  \n      \"attributes\":{  \n         \"adminRxSt\":\"enabled\",\n         \"adminTxSt\":\"enabled\",\n         \"name\":\"lldp-enabled\",\n         \"status\":\"created,modifed\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-profile-ESXi-servers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"infraAccPortP\":{  \n      \"attributes\":{  \n         \"name\":\"ESXi-servers\",\n         \"status\":\"created,modified\"\n      },\n      \"children\":[  \n         {  \n            \"infraHPortS\":{  \n               \"attributes\":{  \n                  \"name\":\"ESXi-server-interfaces\",\n                  \"type\":\"range\",\n                  \"status\":\"created,modified\"\n               },\n               \"children\":[  \n                  {  \n                     \"infraRsAccBaseGrp\":{  \n                        \"attributes\":{\n                           \"tDn\":\"uni/infra/funcprof/accportgrp-ESXi-servers\",\n                           \"status\":\"created,modified\"\n                        }\n                     }\n                  },\n                  {  \n                     \"infraPortBlk\":{  \n                        \"attributes\":{\n                           \"fromCard\":\"1\",\n                           \"fromPort\":\"37\",\n                           \"toCard\":\"1\",\n                           \"toPort\":\"38\",\n                           \"name\":\"block2\",\n                           \"status\":\"created,modified\"\n                        }\n                     }\n                  }\n               ]\n            }\n         }\n               ]\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aaep",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"infraInfra\":{  \n      \"attributes\":{  \n         \"status\":\"created,modified\"\n      },\n      \"children\":[  \n         {  \n            \"infraAttEntityP\":{  \n               \"attributes\":{  \n                  \"name\":\"aaep-global\",\n                  \"status\":\"created,modified\"\n               }\n            }\n         }\n               ]\n            }\n }\n"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aaep+phys-domain",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"infraInfra\":{  \n      \"attributes\":{  \n         \"status\":\"created,modified\"\n      },\n      \"children\":[  \n         {  \n            \"infraAttEntityP\":{  \n               \"attributes\":{  \n                  \"name\":\"aaep-global\",\n                  \"status\":\"created,modified\"\n               },\n               \"children\":[  \n                  {  \n                     \"infraRsDomP\":{  \n                        \"attributes\":{  \n                           \"tDn\":\"uni/phys-phys-domain\",\n                           \"status\":\"created,modified\"\n                        }\n                     }\n                  }\n               ]\n            }\n         }\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vlan-pool-static",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "      {  \n         \"fvnsVlanInstP\":{  \n            \"attributes\":{  \n               \"allocMode\":\"static\",\n               \"name\":\"static-vlans\"\n            },\n            \"children\":[  \n               {  \n                  \"fvnsEncapBlk\":{  \n                     \"attributes\":{  \n                        \"from\":\"vlan-1\",\n                        \"to\":\"vlan-10\"\n                     }\n                  }\n               }\n            ]\n         }\n      }"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vlan-pool-dynamic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "      {  \n         \"fvnsVlanInstP\":{  \n            \"attributes\":{  \n               \"allocMode\":\"dynamic\",\n               \"name\":\"dynamic-vlans\"\n            },\n            \"children\":[  \n               {  \n                  \"fvnsEncapBlk\":{  \n                     \"attributes\":{  \n                        \"from\":\"vlan-10\",\n                        \"to\":\"vlan-11\"\n                     }\n                  }\n               }\n            ]\n         }\n      }"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "physical-domain",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"physDomP\":{  \n      \"attributes\":{  \n         \"name\":\"phys-domain\",\n         \"status\":\"created,modified\"\n      }\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "physical-domain+vlan-pool",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"physDomP\":{  \n      \"attributes\":{  \n         \"name\":\"phys-domain\",\n         \"status\":\"created,modified\"\n      },\n      \"children\":[  \n         {  \n            \"infraRsVlanNs\":{  \n               \"attributes\":{  \n                  \"tDn\":\"uni/infra/vlanns-[bare-metal]-static\",\n                  \"status\":\"created,modified\"\n               },\n               \"children\":[  \n               ]\n            }\n         }\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "external-routed-domain",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n    \"l3extDomP\":{  \n            \"attributes\":{  \n               \"name\" : \"tlevin-l3ext02\"\n            }\n         }\n      }"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "switch-profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"infraNodeP\":{  \n      \"attributes\":{  \n         \"name\":\"sw-prof-ESXi-UCS-C-servers\",\n         \"status\":\"created,modified\"\n      },\n      \"children\":[\n          {  \n            \"infraLeafS\":{  \n               \"attributes\":{  \n                  \"name\":\"leaf-switches\",\n                  \"type\":\"range\",\n                  \"status\":\"created,modified\"\n               },\n               \"children\":[\n                   {  \n                     \"infraNodeBlk\":{  \n                        \"attributes\":{  \n                           \"from_\":\"104\",\n                           \"to_\":\"104\",\n                           \"name\":\"17979b01e6eba58e\",\n                           \"status\":\"created,modified\"\n                        }\n                     }\n                  }\n                  ]\n            }\n         },\n         {  \n            \"infraRsAccPortP\":{  \n               \"attributes\":{  \n                  \"tDn\":\"uni/infra/accportprof-ESXi-servers\",\n                  \"status\":\"created,modified\"\n               }\n            }\n         }\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "int-policy-grp-access-policy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"infraFuncP\":{\n        \"attributes\":{\n    },\n    \"children\":[\n{  \n   \"infraAccPortGrp\":{  \n      \"attributes\":{  \n         \"name\":\"ESXi-servers\",\n         \"status\":\"created,modified\"\n      },\n        \"children\":[\n            {\n                \"infraRsAttEntP\":{  \n                    \"attributes\":{ \n                        \"tDn\":\"uni/infra/attentp-AEP-01\",    \n                        \"status\":\"created,modified\"\n                }\n                }\n            }\n   ]\n   }\n}\n      ]\n   }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni/infra.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni",
+								"infra.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hypervisor",
+			"description": "",
+			"item": [
+				{
+					"name": "VMware-integration-policies",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<polUni dn=\"uni\">\n    <vmmProvP vendor=\"VMware\">\n        <vmmDomP name=\"APIC-vDS\">\n            <infraRsVlanNs tDn=\"uni/infra/vlanns-[tlevin-VMM1]-dynamic\"/>\n            <vmmUsrAccP name=\"Administrator\" usr=\"auslab\\acipod3\" pwd=\"Cisco#DF29\"/>\n            <vmmCtrlrP hostOrIp=\"172.16.30.63\" name=\"ACIPOD3\" rootContName=\"ACIPOD3\">>\n                <vmmRsAcc tDn=\"uni/vmmp-VMware/dom-My-vCenter/usracc-Administrator\"/>\n            </vmmCtrlrP>\n        </vmmDomP>\n    </vmmProvP>\n</polUni>"
+						},
+						"url": {
+							"raw": "https://10.88.64.194/api/mo/uni.xml",
+							"protocol": "https",
+							"host": [
+								"10",
+								"88",
+								"64",
+								"194"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.xml"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tenant-policies",
+			"description": "",
+			"item": [
+				{
+					"name": "tenant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<polUni dn=\"uni\">\n    <fvTenant descr=\"\" dn=\"uni/tn-tl-rob\" name=\"tl-rob\" ownerKey=\"\" ownerTag=\"\">\n    </fvTenant>\n</polUni>    "
+						},
+						"url": {
+							"raw": "https://10.88.64.191/api/mo/uni.xml",
+							"protocol": "https",
+							"host": [
+								"10",
+								"88",
+								"64",
+								"191"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "epg",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fvTenant\":{  \n      \"attributes\":{  \n         \"name\":\"3Tier\",\n         \"status\":\"created,modified\"\n      },\n      \"children\":[  \n         {  \n            \"fvAp\":{  \n               \"attributes\":{  \n                  \"name\":\"test-anp\",\n                  \"status\":\"created,modified\"\n               },\n               \"children\":[\n                   {  \n                     \"fvAEPg\":{  \n                        \"attributes\":{  \n                           \"name\":\"test-epg\",\n                           \"status\":\"created,modified\"\n                        }\n            }\n         }\n         ]\n            }\n         }\n   ]\n}\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bridge-domain",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fvTenant\": {\n        \"attributes\": {\n            \"name\": \"3Tier\",\n            \"status\": \"created,modified\"\n        },\n        \"children\": [\n            {\n                \"fvBD\": {\n                    \"attributes\": {\n                        \"mac\": \"00:22:BD:F8:19:FF\",\n                        \"name\": \"test-bd\",\n                        \"arpFlood\": \"no\",\n                        \"unicastRoute\": \"yes\",\n                        \"unkMacUcastAct\": \"proxy\",\n                        \"unkMcastAct\": \"flood\",\n                        \"status\": \"created,modified\"\n                    }\n                }\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bridge-domain+private-network",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fvTenant\": {\n        \"attributes\": {\n            \"name\": \"3Tier\",\n            \"status\": \"created,modified\"\n        },\n        \"children\": [\n            {\n                \"fvBD\": {\n                    \"attributes\": {\n                        \"mac\": \"00:22:BD:F8:19:FF\",\n                        \"name\": \"test-bd\",\n                        \"arpFlood\": \"no\",\n                        \"unicastRoute\": \"yes\",\n                        \"unkMacUcastAct\": \"proxy\",\n                        \"unkMcastAct\": \"flood\",\n                        \"status\": \"created,modified\"\n                    },\n                    \"children\": [\n                        {\n                            \"fvRsCtx\": {\n                                \"attributes\": {\n                                    \"tnFvCtxName\": \"global-vrf\",\n                                    \"status\": \"created,modified\"\n                                },\n                                \"children\": []\n                            }\n                        }\n                    ]\n                }\n            },\n            {\n                \"fvCtx\": {\n                    \"attributes\": {\n                        \"name\": \"global-vrf\",\n                        \"status\": \"created,modified\"\n                    },\n                    \"children\": []\n                }\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "private-network",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fvTenant\": {\n        \"attributes\": {\n            \"name\": \"3Tier\",\n            \"status\": \"created,modified\"\n        },\n        \"children\": [\n        {\n                \"fvCtx\": {\n                    \"attributes\": {\n                        \"name\": \"global-vrf\",\n                        \"status\": \"created,modified\"\n                }\n            }\n        }\n            ]\n        }\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "application-profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<polUni dn=\"uni\">\n    <fvTenant descr=\"\" dn=\"uni/tn-tl-Production\" name=\"tl-Production\" ownerKey=\"\" ownerTag=\"\">\n        <fvAp descr=\"\" name=\"Billing-ANP\" ownerKey=\"\" ownerTag=\"\" prio=\"unspecified\">\n    </fvAp>\n    <fvAp descr=\"\" name=\"Common-Services-ANP\" ownerKey=\"\" ownerTag=\"\" prio=\"unspecified\">\n    </fvAp>\n    <fvAp descr=\"\" name=\"Virtual-Desktop-ANP\" ownerKey=\"\" ownerTag=\"\" prio=\"unspecified\">\n    </fvAp>\n    <fvAp descr=\"\" name=\"VOIP-ANP\" ownerKey=\"\" ownerTag=\"\" prio=\"unspecified\">\n    </fvAp>\n    </fvTenant>\n</polUni>  "
+						},
+						"url": {
+							"raw": "https://10.88.64.191/api/mo/uni.xml",
+							"protocol": "https",
+							"host": [
+								"10",
+								"88",
+								"64",
+								"191"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "security-filter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fvTenant\":{  \n      \"attributes\":{  \n         \"name\":\"3Tier\",\n         \"status\":\"created,modified\"\n},\n    \"children\": [\n{  \n   \"vzFilter\":{  \n      \"attributes\":{  \n         \"name\":\"any\",\n         \"status\":\"created,modified\"\n      },\n      \"children\":[  \n         {  \n            \"vzEntry\":{  \n               \"attributes\":{  \n                  \"applyToFrag\":\"no\",\n                  \"arpOpc\":\"unspecified\",\n                  \"dFromPort\":\"unspecified\",\n                  \"dToPort\":\"unspecified\",\n                  \"descr\":\"\",\n                  \"etherT\":\"unspecified\",\n                  \"name\":\"Any\",\n                  \"prot\":\"unspecified\",\n                  \"sFromPort\":\"unspecified\",\n                  \"sToPort\":\"unspecified\",\n                  \"tcpRules\":\"\",\n                  \"status\":\"created,modified\"\n               }\n            }\n         }\n      ]\n   }\n}\n]\n}\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "contract",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fvTenant\":{  \n      \"attributes\":{  \n         \"name\":\"3Tier\",\n         \"status\":\"created,modified\"\n},\n    \"children\": [\n        {  \n            \"vzBrCP\":{\n                \"attributes\":{\n                    \"name\":\"web-to-app\",\n                    \"prio\":\"unspecified\",\n                    \"scope\":\"context\",\n                    \"status\":\"created\"\n                },\n                \"children\":[\n                    {\n                         \"vzSubj\":{\n                             \"attributes\":{\n                                 \"name\":\"allow-any\",\n                                 \"status\":\"created\"\n                    },\n                    \"children\":[\n                        {\n                            \"vzRsSubjFiltAtt\":{\n                                \"attributes\":{\n                                    \"tnVzFilterName\":\"Any\",\n                                    \"status\":\"created\"\n                        }\n                            }\n                        }\n                            ]\n                            }\n                        }\n            ]\n            }\n        }\n        ]\n   }\n}\n        "
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "static-binding (Paths)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fvTenant\":{  \n      \"attributes\":{  \n         \"name\":\"3Tier\",\n         \"status\":\"created,modified\"\n      },\n      \"children\":[  \n         {  \n            \"fvAp\":{  \n               \"attributes\":{  \n                  \"name\":\"test-anp\",\n                  \"status\":\"created\"\n               },\n               \"children\":[\n                   {  \n                     \"fvAEPg\":{  \n                        \"attributes\":{  \n                           \"name\":\"test-epg\",\n                           \"status\":\"created,modified\"\n                        },\n                        \"children\":[\n                            {\n                                \"fvRsPathAtt\":{\n                                    \"attributes\":{\n                                        \"encap\":\"vlan-101\",\n                                        \"status\":\"created,modified\",\n                                        \"tDn\":\"topology/pod-1/paths-103/pathep-[eth1/38]\"\n                                    }\n                                }\n                            }\n                            ]\n            }\n         }\n         ]\n            }\n         }\n   ]\n}\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "domain (VMs & Bare-Metal)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"fvTenant\":{  \n      \"attributes\":{  \n         \"name\":\"3Tier\",\n         \"status\":\"created,modified\"\n      },\n      \"children\":[  \n         {  \n            \"fvAp\":{  \n               \"attributes\":{  \n                  \"name\":\"test-anp\",\n                  \"status\":\"created\"\n               },\n               \"children\":[\n                   {  \n                     \"fvAEPg\":{  \n                        \"attributes\":{  \n                           \"name\":\"test-epg\",\n                           \"status\":\"created,modified\"\n                        },\n                        \"children\":[\n                            {\n                                \"fvRsDomAtt\":{\n                                    \"attributes\":{\n                                        \"status\":\"created,modified\",\n                                        \"tDn\":\"uni/phys-phys-domain\"\n                                    }\n                                }\n                            }\n                            ]\n            }\n         }\n         ]\n            }\n         }\n   ]\n}\n}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/mo/uni.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"mo",
+								"uni.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Provided Contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"fvRsProv\":{\"attributes\":{\"tnVzBrCPName\":\"App_Contract\",\"status\":\"created\"},\"children\":[]}}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/tn-Vtenant-32/ap-T1_AppProfile/epg-App_Servers.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-Vtenant-32",
+								"ap-T1_AppProfile",
+								"epg-App_Servers.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Consumed Contract",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"fvRsCons\":{\"attributes\":{\"tnVzBrCPName\":\"App_Contract\",\"status\":\"created\"},\"children\":[]}}"
+						},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/tn-Vtenant-32/ap-T1_AppProfile/epg-Web_Servers.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-Vtenant-32",
+								"ap-T1_AppProfile",
+								"epg-Web_Servers.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"aaaUser\" : {\n    \"attributes\" : {\n      \"name\" : \"{{apic_username}}\",\n      \"pwd\" : \"{{apic_password}}\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://{{apic_ip}}/api/aaaLogin.json",
+					"protocol": "http",
+					"host": [
+						"{{apic_ip}}"
+					],
+					"path": [
+						"api",
+						"aaaLogin.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

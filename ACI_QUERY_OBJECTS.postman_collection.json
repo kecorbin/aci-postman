@@ -1,0 +1,565 @@
+{
+	"info": {
+		"_postman_id": "5beb8167-e659-3ca5-baa9-101fc37af944",
+		"name": "ACI_QUERY_OBJECTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "bridge-domain",
+			"description": "",
+			"item": [
+				{
+					"name": "https://{{apic_ip}}/api/class/fvBD.json",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/class/fvBD.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"class",
+								"fvBD.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fabric",
+			"description": "",
+			"item": [
+				{
+					"name": "switch-profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/class/infraNodeP.xml",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"class",
+								"infraNodeP.xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "interface-policies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/class/infraPortS.xml",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"class",
+								"infraPortS.xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "interface-profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/class/infraProfile.xml",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"class",
+								"infraProfile.xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "coop-ep-db",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/topology/pod-1/node-111/sys/coop/inst/dom-overlay-1/coopEpDb.xml",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"topology",
+								"pod-1",
+								"node-111",
+								"sys",
+								"coop",
+								"inst",
+								"dom-overlay-1",
+								"coopEpDb.xml"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"description": "",
+			"item": [
+				{
+					"name": "Tenant X Health Score",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/tn-2Tier.xml?query-target=self&rsp-subtree-include=health",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-2Tier.xml"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "self"
+								},
+								{
+									"key": "rsp-subtree-include",
+									"value": "health"
+								}
+							]
+						},
+						"description": "https://hostname/api/node/mo/uni/tn-3tierapp.xml?query-target=self&rsp-subtreeinclude=\rhealth"
+					},
+					"response": []
+				},
+				{
+					"name": "Tenant X Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/tn-tl-Production",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-tl-Production"
+							]
+						},
+						"description": "The fol low ing ex am ple is a REST query to the fab ric that re turns the sta tis tics for a ten -\rant named \"3tier app\":"
+					},
+					"response": []
+				},
+				{
+					"name": "GetTenantStats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/tn-2Tier.xml?query-target=self&rsp-subtree-include=stats",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-2Tier.xml"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "self"
+								},
+								{
+									"key": "rsp-subtree-include",
+									"value": "stats"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTenantFaults",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/tn-2Tier.xml?query-target=self&rsp-subtree-include=faults",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-2Tier.xml"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "self"
+								},
+								{
+									"key": "rsp-subtree-include",
+									"value": "faults"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Faults for Leaf",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/topology/pod-1/node-102.xml?query-target=self&rsp-subtree-include=faults",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"topology",
+								"pod-1",
+								"node-102.xml"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "self"
+								},
+								{
+									"key": "rsp-subtree-include",
+									"value": "faults"
+								}
+							]
+						},
+						"description": "The fol low ing ex am ple is a REST query to the fab ric that re turns the faults for a leaf\rnode:"
+					},
+					"response": []
+				},
+				{
+					"name": "Leaf Inter Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/topology/pod-1/node-112/sys/phys-[eth1/1]/HDeqptIngrTotal5min-0.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"topology",
+								"pod-1",
+								"node-112",
+								"sys",
+								"phys-[eth1",
+								"1]",
+								"HDeqptIngrTotal5min-0.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EPG Throughput Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/uni/tn-2Tier/ap-Two-Server-ANP/epg-Server1-epg.xml?query-target=self&rsp-subtree-include=stats",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"uni",
+								"tn-2Tier",
+								"ap-Two-Server-ANP",
+								"epg-Server1-epg.xml"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "self"
+								},
+								{
+									"key": "rsp-subtree-include",
+									"value": "stats"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LLDP Neighbors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/mo/topology/pod-1/node-103/sys/lldp/inst/if-[eth1/37].json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"topology",
+								"pod-1",
+								"node-103",
+								"sys",
+								"lldp",
+								"inst",
+								"if-[eth1",
+								"37].json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "interfaces",
+			"description": "",
+			"item": [
+				{
+					"name": "APIC Physical Interfaces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/class/cnwPhysIf.xml",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"cnwPhysIf.xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Aggregate Interfaces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/class/cnwAggrIf.xml",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"cnwAggrIf.xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "APIC Layer3 Management Interfaces",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/class/l3Inst.xml",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"l3Inst.xml"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "private-network",
+			"description": "",
+			"item": [
+				{
+					"name": "https://{{apic_ip}}/api/class/fvCtx.json",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/class/fvCtx.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"class",
+								"fvCtx.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tenant",
+			"description": "",
+			"item": [
+				{
+					"name": "GetTenants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/class/fvTenant.json",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"class",
+								"fvTenant.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTenantDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "https://{{apic_ip}}/api/node/class/fvTenant.xml?query-target-filter=and(eq(fvTenant.dn,\"uni/tn-2Tier/\"))",
+							"protocol": "https",
+							"host": [
+								"{{apic_ip}}"
+							],
+							"path": [
+								"api",
+								"node",
+								"class",
+								"fvTenant.xml"
+							],
+							"query": [
+								{
+									"key": "query-target-filter",
+									"value": "and(eq(fvTenant.dn,\"uni/tn-2Tier/\"))"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authenticate Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"aaaUser\" : {\n    \"attributes\" : {\n      \"name\" : \"{{apic_username}}\",\n      \"pwd\" : \"{{apic_password}}\"\n    }\n  }\n}\n"
+				},
+				"url": {
+					"raw": "http://{{apic_ip}}/api/aaaLogin.json",
+					"protocol": "http",
+					"host": [
+						"{{apic_ip}}"
+					],
+					"path": [
+						"api",
+						"aaaLogin.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
